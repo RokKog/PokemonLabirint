@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Pokemon-Maze</title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="style.css">
+	<link rel="icon" type="image/png" href="Slike/icon.png">
+	<script src="script.js"></script>
+	
+</head>
+	<body>
+        <div class="container">
+            <div class="levi">	
+                <canvas id="canvas" class="maze" width="484" height="484">
+
+                        <script>
+                        drawMaze();
+                        </script>
+                        </canvas>
+            </div>
+            <div class="sredina">	
+                            <img src="Slike/reloading.png" width="100" height="100" class="slika2" onclick="erasePath()">
+                            <img src="Slike/start.png" width="200" height="200" class="slika" onclick="drawPath()">
+                            <img src="Slike/pikachu.png" class="slika3">
+                            <img src="Slike/pokeball.png" class="slika4" width="40" height="40">
+            </div>
+            
+        </div>
+	</body>
+</html>

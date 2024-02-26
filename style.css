@@ -1,0 +1,74 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+html, body{
+	width: 100%;
+	height: 100%;
+}
+body {
+	background:url(Slike/background.jpg) no-repeat;
+	background-size: cover;
+  
+	}
+	h1 { 
+	  letter-spacing: 2px;
+	  margin-top:-70%;
+	  margin-left:-90%;
+	  font-size:150px;
+	  
+	}
+.container {
+    display: flex; 
+	justify-content: space-around;
+    align-items: center; 
+    margin-right: 1230px;
+}
+
+.levi {
+    flex: 0 0 auto; 
+    margin-top: 40px;
+	margin-left: 10%;
+    order: 1;
+    
+}
+.sredina {
+    flex: 0 0 auto; 
+    margin-top: 40px;
+	margin-left: 5%;
+    order: 2;
+}
+.gumb1{
+  position:absolute;
+  width: 170px;
+  height: 170px;
+  margin-top: 130px;
+  margin-left: 10px;
+}
+.gumb2{
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  margin-left: 800px; 
+
+}
+.slika{
+    position: absolute;
+    margin-top: 89px;
+    
+}
+.slika2{
+    position: absolute;
+    margin-left: 1000px;
+    margin-top: -360px;
+}
+.slika3{
+    position: absolute;
+    margin-top: 340px;
+    margin-left: -394px;
+}
+.slika4{
+    position: absolute;
+    margin-top: -379px;
+    margin-left: -404px;
+}
