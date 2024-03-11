@@ -469,7 +469,7 @@ function drawMaze(){
   
       const canvas = document.getElementById("canvas");
       const ctx = canvas.getContext("2d");
-      const drawDelay = 100;
+      const drawDelay = 120;
   
       path.reverse();
   
@@ -546,4 +546,8 @@ function drawMaze(){
   
   const resetButton = document.getElementById("yellow");
   resetButton.addEventListener("click", erasePath);
+
+  function reload(){
+    location.reload();
+  }
   

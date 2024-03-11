@@ -7,9 +7,8 @@ html, body{
 	height: 100%;
 }
 body {
-	background:url(Slike/background.jpg) no-repeat;
-	background-size: cover;
-  
+	background:url(orange) no-repeat;
+    background-size: cover;
 	}
 	h1 { 
 	  letter-spacing: 2px;
@@ -27,8 +26,9 @@ body {
 
 .levi {
     flex: 0 0 auto; 
-    margin-top: 40px;
-	margin-left: 10%;
+    position: relative;
+    margin-top: 180px;
+	margin-left: 1200px;
     order: 1;
     
 }
@@ -52,23 +52,67 @@ body {
   margin-left: 800px; 
 
 }
-.slika{
+.naslov{
     position: absolute;
-    margin-top: 89px;
-    
+    margin-top: -715px;
+   margin-left: 1160px;
+}
+.slika1{
+    position: absolute;
+    margin-bottom: -915px;
+    margin-left: 1187px;
 }
 .slika2{
     position: absolute;
-    margin-left: 1000px;
-    margin-top: -360px;
+    margin-top: -550px;
+    margin-left: 1140px;
 }
-.slika3{
+.btn {
     position: absolute;
-    margin-top: 340px;
-    margin-left: -394px;
+    background-color: green;
+    margin-top: 10px;
+    padding: 15px 45px;
+    text-align: center;
+    border: none;
+    outline: none;
+    transition: .5s;
+    text-transform: uppercase;
+    color: white;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 24px;
+    display: block;
+    border-radius: 30px;
+    background-size: 200% auto;
+    box-shadow: 3px 8px 22px rgba(22,21,21,.15);
+    margin-left: 2200px;
 }
-.slika4{
+.btn:hover {
+    transform: scale(1.1);
+    transition: all .5s;
+}
+
+.btn2 {
     position: absolute;
-    margin-top: -379px;
-    margin-left: -404px;
+    background-color: red;
+    margin-top: 200px;
+    margin-left: 2200px;
+    padding: 15px 45px;
+    text-align: center;
+    border: none;
+    outline: none;
+    transition: .5s;
+    text-transform: uppercase;
+    color: white;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 24px;
+    display: block;
+    border-radius: 30px;
+    background-size: 200% auto;
+    box-shadow: 3px 8px 22px rgba(22,21,21,.15);
+}
+.btn2:hover {
+    transform: scale(1.1);
+    transition: all .5s;
 }
