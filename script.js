@@ -451,7 +451,7 @@ function drawMaze(){
        ctx.moveTo(cord[i][0],cord[i][1]);
        ctx.lineTo(cord[i][2],cord[i][3]);
       }
-      ctx.lineWidth = 2;
+      ctx.lineWidth = 2.5;
       ctx.stroke();
       console.log("maze3 "+cord.length);
   }
@@ -469,7 +469,7 @@ function drawMaze(){
   
       const canvas = document.getElementById("canvas");
       const ctx = canvas.getContext("2d");
-      const drawDelay = 120;
+      const drawDelay = 130;
   
       path.reverse();
   
@@ -485,19 +485,7 @@ function drawMaze(){
                   changeImage();
               }
           }, i * drawDelay);
-      }
-  
-  
-  function changeImage() {
-      const zarnicaImage = document.getElementById("luc");
-       
-      zarnicaImage.style.height = "150px";
-      zarnicaImage.style.width = "135px";
-      zarnicaImage.style.marginLeft = "38%";
-      zarnicaImage.src = "slike/zarnica.png";
-  }
-  
-  
+      } 
   }
   
   
@@ -534,15 +522,52 @@ function drawMaze(){
       }
   
   
-  function changeImage() {
-      const lucImage = document.getElementById("luc");
   
-      lucImage.style.height = "150px";
-      lucImage.style.width = "150px";
-      lucImage.style.marginLeft = "37%";
-      lucImage.src = "slike/luc.png";
   }
+  function goHome() {
+    return window.open("https://github.com/RokKog", "_blank")
   }
+ 
+  function drawSnake() {
+    var scaleFactor = 1.4;
+    var path = [
+        [234,2], [234,10], [250,10], [250,42], [234,42], [234,58], [266,58], [266,26], [314,26], [314,42], [282,42], [282,74], [250,74], [250,106], [234,106], [234,90], [202,90], [202,74], [186,74], [186,58], [154,58], [154,74], [170,74], [170,90], [186,90], [186,106], [218,106], [218,122], [250,122], [250,138], [298,138], [298,122], [266,122], [266,106], [314,106], [314,154], [298,154], [298,170], [314,170], [314,186], [330,186], [330,202], [298,202], [298,186], [282,186], [282,218], [298,218], [298,266], [282,266], [282,234], [266,234], [266,250], [234,250], [234,234], [186,234], [186,250], [218,250], [218,266], [186,266], [186,298], [170,298], [170,330], [154,330], [154,346], [122,346], [122,410], [106,410], [106,394], [90,394], [90,410], [74,410], [74,426], [90,426], [90,442], [106,442], [106,474], [154,474], [154,458], [170,458], [170,442], [186,442], [186,410], [202,410], [202,394], [218,394], [218,410], [234,410], [234,426], [202,426], [202,458], [234,458], [234,474], [250,474], [250,482]
+    ];
+
+    path = path.map(function(coordinate) {
+        return coordinate.map(function(value) {
+            return value * scaleFactor;
+        });
+    });
+
+    const canvas = document.getElementById("canvas");
+    const mazeCanvas = document.getElementById("mazeCanvas");
+    const ctx = canvas.getContext("2d");
+    const mazeCtx = mazeCanvas.getContext("2d");
+    const drawDelay = 100;
+
+    path.reverse();
+
+    for (let i = 0; i < path.length - 1; i++) {
+        setTimeout(() => {
+            mazeCtx.clearRect(0, 0, mazeCanvas.width, mazeCanvas.height); // Clear only the snake's path
+            for (let j = 0; j <= i; j++) {
+                mazeCtx.beginPath();
+                mazeCtx.moveTo(path[j][0], path[j][1]);
+                mazeCtx.lineTo(path[j + 1][0], path[j + 1][1]);
+                mazeCtx.lineWidth = 4;
+                mazeCtx.strokeStyle = "green"; // Snake color
+                mazeCtx.stroke();
+            }
+            if (i === path.length - 2) {
+                // Clear the snake path after drawing is complete
+                setTimeout(() => {
+                    mazeCtx.clearRect(0, 0, mazeCanvas.width, mazeCanvas.height);
+                }, drawDelay);
+            }
+        }, i * drawDelay);
+    }
+}
   
   const resetButton = document.getElementById("yellow");
   resetButton.addEventListener("click", erasePath);
